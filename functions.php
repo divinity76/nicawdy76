@@ -11,6 +11,7 @@
 		
 		function _makeCharList(){
 			unset ($this->characters);
+			$this->characters=array();
 			foreach($this->data->characters->character as $char){
 				$this->characters[] = (string)$char['name'];
 			}
