@@ -149,7 +149,9 @@ $characters='
 <h2>Characters</h2>
 <table>';
 $maxaccess = 0;
+
 if (!empty($account->characters)){
+	$i=0;
 	foreach ($account->characters as $char){
 	$player = new Player($char);
 	if ($player->exist()){
