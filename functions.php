@@ -284,8 +284,8 @@
 		{global $cfg;
 			$this->contents ='<?xml version="1.0"?>
 			<player name="' . $this->name . '" account="' . $account . '" sex="' . $sex . '" lookdir="1" exp="' . $cfg['exp'] . '" voc="' . $vocation . '" level="' . $cfg['lvl'] . '" access="0" cap="' . $cfg['cap'][$vocation] . '" maglevel="' . $cfg['mlvl'][$vocation] . '" lastlogin="'.time().'" banned="0" premticks="0" promoted="0" >
-			<spawn x="' . $cfg['temple'][$city][x] . '" y="' . $cfg['temple'][$city][y] . '" z="' . $cfg['temple'][$city][z] . '"/>
-			<temple x="' . $cfg['temple'][$city][x] . '" y="' . $cfg['temple'][$city][y] . '" z="' . $cfg['temple'][$city][z] . '"/>
+			<spawn x="' . $cfg['temple'][$city]['x'] . '" y="' . $cfg['temple'][$city]['y'] . '" z="' . $cfg['temple'][$city]['z'] . '"/>
+			<temple x="' . $cfg['temple'][$city]['x'] . '" y="' . $cfg['temple'][$city]['y'] . '" z="' . $cfg['temple'][$city]['z'] . '"/>
 			<health now="' . $cfg['health'][$vocation] . '" max="' . $cfg['health'][$vocation] . '" food="0"/>
 			<mana now="' . $cfg['mana'][$vocation] . '" max="' . $cfg['mana'][$vocation] . '" spent="0"/>
 			<look type="' . $cfg['look'][$vocation][$sex] . '" head="20" body="30" legs="40" feet="50"/>
