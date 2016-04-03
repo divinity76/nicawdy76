@@ -35,7 +35,7 @@
 		}
 		
 		
-		function Account($n)
+		function __construct($n)
 		{global $cfg;
 			$this->filename = $cfg['diraccount'].$n.'.xml';
 			$this->number = $n;
