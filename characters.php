@@ -6,7 +6,7 @@ include ("functions.php");
 $ptitle="Characters - $cfg[server_name]";
 include("header.php");
 //you can add extra cities here. they will not be displayed when creating character
-$cfg['temple']['edron'] = array (x=>1651, y=>519, z=>8);
+$cfg['temple']['edron'] = array ('x'=>1651, 'y'=>519, 'z'=>8);
 ?>
 <div id="content">
 <div class="top">.:Character LookUp:.</div>
