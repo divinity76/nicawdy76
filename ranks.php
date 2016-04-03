@@ -22,7 +22,7 @@ include 'header.php';
     fwrite($socket, "\r\n");
 	fclose($socket);
 	}
-include 'statistics.php';
+@include 'statistics.php';
 $total = isset($statistics)? ($statistics['census']['male'] + $statistics['census']['female']) : 0;
 if ($total == 0 || empty($total)){
 	@include 'statistics.bak';
