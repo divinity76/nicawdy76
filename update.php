@@ -74,7 +74,8 @@ foreach (array_keys($all_stats) as $stat){
 		arsort($buffer);
 		$i = 0;
 		while ($i < $cfg['highscoreshow'] ){
-			fwrite($f_rank,'$statistics[\''.$stat.'\'][] = array(\'name\'=>\''.str_replace("'","\\'",$all_stats['name'][key($buffer)]).'\', \'skill\'=>\''.current($buffer).'\');'."\r\n");
+			$text=
+			fwrite($f_rank,'$statistics[\''.$stat.'\'][] = array(\'name\'=>\''.str_replace("'","\\'",($all_stats['name'][key($buffer)]??'')  ).'\', \'skill\'=>\''.current($buffer).'\');'."\r\n");
 			next($buffer);
 			$i++;
 		}
