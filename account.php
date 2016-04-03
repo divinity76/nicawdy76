@@ -19,7 +19,7 @@ if ($account->load()){
 if ($account->correctPass($_POST['password'])){
 
 $_SESSION['account']=$_POST['account'];
-$_SESSION['email']=$pieces['email'];
+$_SESSION['email']=$pieces['email']??'';
 $_SESSION['ip']=$_SERVER['REMOTE_ADDR'];
 
 }else{$error = "Wrong password or account number";}
