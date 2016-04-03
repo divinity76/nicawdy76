@@ -14,7 +14,8 @@ GNU General Public License for more details.
 
 http://www.gnu.org/copyleft/gpl.html
 */
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
+init();
 //---------------------------- Data Dir ----------------------------------------
 
 /*Set location of data directory
@@ -305,3 +306,43 @@ if (!version_compare(phpversion(), "5.1.4", ">=") )
 //Check if extensions loaded
 if (!extension_loaded('simplexml'))
 	$error = "SimpleXML is not enabled in php.ini";
+
+
+
+
+
+
+
+function init()
+{
+    static $firstrun=true;
+    if($firstrun!==true){
+    	return;
+    }
+    $firstrun=false;
+    error_reporting(E_ALL);
+    set_error_handler("exception_error_handler");
+    //	ini_set("log_errors",true);
+    //	ini_set("display_errors",true);
+    //	ini_set("log_errors_max_len",0);
+    //	ini_set("error_prepend_string",'<error>');
+    //	ini_set("error_append_string",'</error>'.PHP_EOL);
+    //	ini_set("error_log",__DIR__.'/error_log.php');
+    assert_options(ASSERT_ACTIVE, 1);
+    assert_options(ASSERT_WARNING, 0);
+    assert_options(ASSERT_QUIET_EVAL, 1);
+    assert_options(ASSERT_CALLBACK, 'assert_handler');
+}
+function exception_error_handler($errno, $errstr, $errfile, $errline)
+{
+    if (!(error_reporting() & $errno)) {
+        // This error code is not included in error_reporting
+        return;
+    }
+    throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
+}
+function assert_handler($file, $line, $code, $desc = null)
+{
+    $errstr='Assertion failed at '.$file.':'.$line.' '.$desc.' code: '.$code;
+    throw new ErrorException($errstr,0,1,$file,$line);
+}
