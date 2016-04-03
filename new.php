@@ -85,7 +85,7 @@ if ($cfg['account_number'] == 2){echo "hidden";} else {echo "text";}
 if ($cfg['account_number'] == 2){echo $_SESSION['acc'];}
 ?><br/>
 <label for="account">Password</label><br/>
-<input name="password" id="password" type="password" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars($_POST['password'])?>"/><br/>
+<input name="password" id="password" type="password" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars(($_POST['password']??''))?>"/><br/>
 <label for="confirm">Confirm Password</label><br/>
 <input name="confirm" id="confirm" type="password" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars($_POST['confirm'])?>"/><br/>
 <?php  if ($cfg['ask_email']){?>
