@@ -23,6 +23,9 @@ fwrite($f_rank,'<?php
 ');
 
 $dir_rank = opendir($cfg['dirplayer']);
+if(!isset($vocations)){
+	$vocations=array();
+}
 while($file = readdir($dir_rank) ){
 	if(pathinfo($file,PATHINFO_EXTENSION)!=='xml'){
 		continue;
@@ -40,9 +43,11 @@ while($file = readdir($dir_rank) ){
 					unlink($cfg['dirplayer'] . $file);
 					$delete_log .= "Deleted: ".$file."\r\n";
 				}
-				
-				$vocations[(int)$player->data['voc']]++;
-
+				if(!isset($vocations[(int)$player->data['voc']])){
+					$vocations[(int)$player->data['voc']]=1;
+				} else{
+					$vocations[(int)$player->data['voc']]++;
+				}
 				switch ($player->data['sex']){
 					case 0: $female++; break;
 					case 1: $male++; break;
