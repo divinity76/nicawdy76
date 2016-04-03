@@ -23,7 +23,7 @@ function detect()
         }
     foreach ($os as $val)
         {
-        if (eregi($val,strtoupper($_SERVER['HTTP_USER_AGENT']))) $info['os'] = $val;
+		if(stripos($_SERVER['HTTP_USER_AGENT'],$val)!==false){$info['os'] = $val; break;}
         }
     return $info;
     } 
@@ -58,5 +58,3 @@ $IECSS=str_replace($out[0], $out[1], $IECSS);
 //output CSS according to browser type
 if ($b=="IE" && ($v=="5.5" || $v=="6")){echo $IECSS;}
 else {echo $CSS;}
-
-?>

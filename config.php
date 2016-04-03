@@ -308,11 +308,6 @@ if (!extension_loaded('simplexml'))
 	$error = "SimpleXML is not enabled in php.ini";
 
 
-
-
-
-
-
 function init()
 {
     static $firstrun=true;
