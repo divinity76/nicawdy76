@@ -26,6 +26,8 @@ $dir_rank = opendir($cfg['dirplayer']);
 if(!isset($vocations)){
 	$vocations=array();
 }
+$female=0;
+$male=0;
 while($file = readdir($dir_rank) ){
 	if(pathinfo($file,PATHINFO_EXTENSION)!=='xml'){
 		continue;
