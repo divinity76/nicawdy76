@@ -304,6 +304,7 @@
         $socket = @fsockopen($host, $port, $errorCode, $errorString, 0.5);
 		
         // if connected then checking statistics
+		$data='';
         if($socket)
         {
             // sets 5 second timeout for reading and writing
