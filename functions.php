@@ -43,6 +43,7 @@
 		
 		function isValid()
 		{
+			return 1===preg_match('/^[1-9][0-9]{5,7}$/',$this->number);
 		}
 		
 		function getCharCount()
