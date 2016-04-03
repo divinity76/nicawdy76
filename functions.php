@@ -159,8 +159,9 @@
 			return $str;
 		}
 		
-		function Player($n)
-		{global $cfg;
+		function __construct($n)
+		{
+			global $cfg;
 			$this->filename = $cfg['dirplayer'].strtolower($n).'.xml';
 			$this->name = $n;
 		}
