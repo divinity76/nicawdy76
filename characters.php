@@ -22,7 +22,7 @@ if (!empty($_GET['char'])){
 			$voc = (int) $player->data['voc'];
 
 			if ($player->data['promoted'] == 1){
-				echo '<b>Vocation:</b> '.$cfg[voc_promoted][$voc]."<br/>\n";
+				echo '<b>Vocation:</b> '.$cfg['voc_promoted'][$voc]."<br/>\n";
 			}else{
 				echo '<b>Vocation:</b> '.$cfg[voc_normal][$voc]."<br/>\n";
 			}
