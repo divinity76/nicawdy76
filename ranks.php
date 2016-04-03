@@ -106,7 +106,7 @@ echo '<a href="?'.$sets.'&amp;site='.$next.'">&gt;</a>';
 <?php 
 echo '<tr class="p0"><td class="p0"><b>Rank</b></td><td class="p0"><b>Name</b></td><td class="p0"><b>Level</b></td></tr>'; }
 
-if(isset($_GET[$sets])):
+if(isset($_GET[($sets??'')])):
 foreach($scores as $position => $score):
 ?>
     <tr class="<?= $score['class']; ?>">
