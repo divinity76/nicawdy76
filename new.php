@@ -20,7 +20,7 @@ if (empty($_POST['email']) || filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
 $account = new Account($_POST['account']);
 if (!$account->exist() && $account->isValid()){
 if ($cfg['account_number'] !== 2 or $_SESSION['acc'] == $account->number){
-if (ereg('^[A-Za-z0-9@#$%^+=]{5,60}$',$_POST['password']) || !$cfg['md5passwords']){
+if (1===preg_match('/^[a-z0-9@\#\$\%\^\+\=]{5,60}$/i',$_POST['password']) /*|| $cfg['md5passwords']*/){
 if ($_POST['password'] == $_POST['confirm']){
 if ($_POST['password'] != $account->number){
 if (!empty($_SESSION['RandomText']) || !$cfg['use_captha']){
