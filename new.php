@@ -16,7 +16,7 @@ $_POST['email']=trim($_POST['email']??'');
 $_POST['account']=trim($_POST['account']);
 
 if ((strtolower($_POST['captcha']) == $_SESSION['RandomText']) || !$cfg['use_captha']){
-if (eregi("^[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}$",$_POST['email']) || empty($_POST['email'])){
+if (empty($_POST['email']) || filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
 $account = new Account($_POST['account']);
 if (!$account->exist() && $account->isValid()){
 if ($cfg['account_number'] !== 2 or $_SESSION['acc'] == $account->number){
