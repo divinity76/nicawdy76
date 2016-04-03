@@ -17,7 +17,7 @@ if (!empty($_GET['char'])){
 		$player = new Player($_GET['char']);
 		if ($player->load()){
 			echo '<b>Name:</b> '.$player->data['name']."<br/>\n";
-			echo '<b>Level:</b> '.$player->data[level]."<br/>\n";
+			echo '<b>Level:</b> '.$player->data['level']."<br/>\n";
 			echo '<b>Magic Level:</b> '.$player->data[maglevel]."<br/>\n";
 			$voc = (int) $player->data['voc'];
 
