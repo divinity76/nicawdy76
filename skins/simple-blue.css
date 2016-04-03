@@ -1,0 +1,117 @@
+/*Skin by Nicaw*/
+
+body {
+	background-color: rgb(240,240,240);
+}
+img {
+	border: 0;
+}
+a {
+	color: black;
+}
+h2 {
+	font: normal normal 1.5em "Tahoma",serif;
+    text-decoration: none;
+	height: 40px;
+	padding-left: 25px;
+}
+a:hover{
+	color: gray;
+}
+.top {
+	color: black;
+}
+.rowselect {
+	cursor: pointer;
+}
+.rowselect:hover {
+	background-color: #fcecbf;
+}
+#container {
+}
+#header {
+}
+#panel {
+}	
+#navigation .top {
+	display: none;
+}
+#panel .mid {
+}
+#navigation .bot {
+	display: none;
+}
+#navigation ul {
+	text-align: center;
+	background-color: #718fbd;
+	font-family: Verdana, Tahoma;
+	font-size: 14pt;
+	min-width: 650px;
+	height: 34px;
+	padding: 0;
+	padding-top: 7px;
+	margin: 0;
+}
+#navigation a {
+	color: white;
+	text-decoration: none;
+}
+#navigation li {
+	display: inline;
+	margin-right: 5px;
+	list-style-type: none;
+}
+#content {
+	border: solid #d1d7dc 1px;
+	background-color: rgb(230,230,240);
+	min-width: 650px;
+}
+#content .top {
+	display: none;
+}
+#content .mid {
+	padding: 30px 30px 30px 100px;
+}
+#content .bot {
+	display: none;
+}
+#error {
+	background-image: url(skins/swamp/error.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: bold;
+	width: 180px;
+	height: 70px;
+	padding-left: 60px;
+	padding-right: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-left: 200px;
+	margin-top: 100px;
+	cursor: pointer;
+}
+#captcha-image {
+	margin-top: 5px;
+}
+#account-image {
+}
+#choose-skill {
+	float: left;
+	margin-right: 20px;
+}
+#friends {
+	display: none;
+}
+#status {
+	float: right;
+	margin: 20px;
+	text-align: right;
+}
+#status .top{
+	display: none;
+}
+.offline, .online {
+	display: none;
+}

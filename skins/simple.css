@@ -1,0 +1,149 @@
+/*Skin by Nicaw
+No images loaded with this skin*/
+
+body {
+	background-color: white;
+	background-repeat: repeat-x;
+}
+img {
+	border: 0;
+}
+a {
+	color: black;
+}
+h2 {
+	background-repeat: no-repeat;
+	font: normal normal 1.5em "Georgia",serif;
+    text-decoration: none;
+	height: 40px;
+	padding-left: 25px;
+}
+a:hover{
+	font-weight: normal;
+	color: gray;
+}
+.top {
+	color: black;
+}
+.online {
+	color: #51850d;
+	font-weight: bold;
+}
+.offline {
+	font-weight: bold;
+}
+.rowselect {
+	cursor: pointer;
+}
+.rowselect:hover {
+	background-color: #fcecbf;
+}
+#container {
+	width: 800px;
+	position: relative;
+}
+#header {	
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 800px;
+	height: 150px;
+}
+#panel {
+	position: absolute;
+}	
+#panel a:hover {
+	font-weight: bold;
+	color: black;
+}
+#panel li {
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	list-style-type: none;
+	height: 23px;
+}
+#panel .top {
+	width: 174px;
+	height: 25px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 5px;
+	text-align: center;
+	font-weight: bold;
+}
+#panel .mid {
+	background-repeat: repeat-y;
+	text-align: center;
+	padding: 10px;
+	width: 154px;
+}
+#panel .bot {
+	background-repeat: no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 174px;
+	height: 13px;
+}
+#panel ul {
+	width: 174px;
+	padding: 0;
+	margin: 0;
+}
+#panel a {
+	text-decoration: none;
+	color: black;
+}
+#panel a:hover {
+	font-weight: bold;
+}
+#content {
+	position: absolute;
+	margin-left: 174px;
+}
+#content .top {
+	width: 626px;
+	height: 25px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 5px;
+	text-align: left;
+	font-weight: bold;
+}
+#content .mid {
+	background-repeat: repeat-y;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 586px;
+	min-height: 200px;
+}
+#content .bot {
+	background-repeat: no-repeat;
+	padding: 0;
+	margin: 0;
+	width: 626px;
+	height: 13px;
+}
+#error {
+	background-repeat: no-repeat;
+	position: absolute;
+	font-family: Verdana;
+	font-size: 8pt;
+	font-weight: bold;
+	color: red;
+	cursor: pointer;
+	margin-left: 400px;
+}
+#captcha-image {
+	margin-top: 5px;
+}
+#account-image {
+	background-repeat: no-repeat;
+	width: 300px;
+	height: 200px;
+	float: right;
+}
+#choose-skill {
+	float: left;
+	margin-right: 20px;
+}

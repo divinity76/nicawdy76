@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation>
+<category name="Navigation">
+<item href="index.php">Home</item>
+<item href="account.php">Account</item>
+<item href="ranks.php">Highscores</item>
+<item href="characters.php">Characters</item>
+<item href="guilds.php">Guilds</item>
+<item href="downloads.php">Downloads</item>
+</category>
+
+</navigation>
