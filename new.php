@@ -87,7 +87,7 @@ if ($cfg['account_number'] == 2){echo $_SESSION['acc'];}
 <label for="account">Password</label><br/>
 <input name="password" id="password" type="password" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars(($_POST['password']??''))?>"/><br/>
 <label for="confirm">Confirm Password</label><br/>
-<input name="confirm" id="confirm" type="password" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars($_POST['confirm'])?>"/><br/>
+<input name="confirm" id="confirm" type="password" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars(($_POST['confirm'])??:'')?>"/><br/>
 <?php  if ($cfg['ask_email']){?>
 <label for="email">Email (optional)</label><br/>
 <input name="email" id="email" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars($_POST['email'])?>"/><br/>
