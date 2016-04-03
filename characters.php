@@ -13,7 +13,7 @@ $cfg['temple']['edron'] = array ('x'=>1651, 'y'=>519, 'z'=>8);
 <div class="mid">
 <?php 
 if (!empty($_GET['char'])){
-	if (ereg("^[0-9A-Za-z -]{2,30}$",$_GET['char'])){
+	if (1===preg_match('/^[0-9A-Za-z]{2,30}$/i',$_GET['char'])){
 		$player = new Player($_GET['char']);
 		if ($player->load()){
 			echo '<b>Name:</b> '.$player->data['name']."<br/>\n";
