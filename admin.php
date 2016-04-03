@@ -1,4 +1,4 @@
-<?
+<?php 
 /*FILE INFO:
 admin panel*/
 
@@ -27,7 +27,7 @@ Notice:<br/>
 ~Character must be offline to edit his settings.<br/>
 ~There's built in exp calculator. You just need to change level.<br/>
 ~If autounban is on, you can increase bantime by decreasing lastlogin.<br/>
-<?
+<?php 
 
 if (!empty($_POST['char'])){
 			$_SESSION['edit-char'] = $_POST['char'];
@@ -114,4 +114,4 @@ echo '<input type="submit" name="teleport" value="Teleport to Temple"/></form>';
 </div>
 <div class="bot"></div>
 </div>
-<?include ("footer.php");?>
+<?php include ("footer.php");?>

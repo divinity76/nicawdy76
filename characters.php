@@ -1,4 +1,4 @@
-<?
+<?php 
 /*FILE INFO:
 character lookup*/
 include ("config.php");
@@ -11,7 +11,7 @@ $cfg['temple']['edron'] = array (x=>1651, y=>519, z=>8);
 <div id="content">
 <div class="top">.:Character LookUp:.</div>
 <div class="mid">
-<?
+<?php 
 if (!empty($_GET['char'])){
 	if (ereg("^[0-9A-Za-z -]{2,30}$",$_GET['char'])){
 		$player = new Player($_GET['char']);
@@ -90,4 +90,4 @@ if (!empty($_GET['char'])){
 </div>
 <div class="bot"></div>
 </div>
-<?include ("footer.php");?>
+<?php include ("footer.php");?>

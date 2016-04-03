@@ -1,12 +1,12 @@
-<? 
+<?php  
 /*FILE INFO:
 included at the footer of every page*/
 if (!empty($error)){?>
 <div id="error" onclick="setStyle(this,'display','none')">
 <span><?=$error?></span><br/>
-</div><?}?>
+</div><?php }?>
 </div>
-<?
+<?php 
 //Get current time as we did at start
     $mtime = microtime();
     $mtime = explode(" ",$mtime);

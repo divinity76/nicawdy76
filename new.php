@@ -1,4 +1,4 @@
-<?
+<?php 
 /*FILE INFO:
 new account creation*/
 session_start();
@@ -10,7 +10,7 @@ include ("header.php");
 <div id="content">
 <div class="top">.:Account Registration:.</div>
 <div class="mid">
-<?
+<?php 
 if (!empty($_POST['account'])){
 $_POST['email']=trim($_POST['email']);
 $_POST['account']=trim($_POST['account']);
@@ -78,28 +78,28 @@ if (!empty($_POST['account']) && $cfg['account_number'] != 2){
 <div id="account-image"></div>
 <form action="<?=htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post">
 <label for="account">Account Number</label><br/>
-<input name="account" id="account" type="<?
+<input name="account" id="account" type="<?php 
 if ($cfg['account_number'] == 2){echo "hidden";} else {echo "text";}
 ?>" class="textfield" size="30" maxlength="10" value="<?=$_SESSION['acc']?>"/>
-<?
+<?php 
 if ($cfg['account_number'] == 2){echo $_SESSION['acc'];}
 ?><br/>
 <label for="account">Password</label><br/>
 <input name="password" id="password" type="password" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars($_POST['password'])?>"/><br/>
 <label for="confirm">Confirm Password</label><br/>
 <input name="confirm" id="confirm" type="password" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars($_POST['confirm'])?>"/><br/>
-<? if ($cfg['ask_email']){?>
+<?php  if ($cfg['ask_email']){?>
 <label for="email">Email (optional)</label><br/>
 <input name="email" id="email" class="textfield" size="30" maxlength="60" value="<?=htmlspecialchars($_POST['email'])?>"/><br/>
-<?}?>
-<? if ($cfg['use_captha']){?>
+<?php }?>
+<?php  if ($cfg['use_captha']){?>
 <img id="captcha-image" src="doimg.php?<?=time()?>" alt="IMAGE NOT DISPLAYED. CHECK BROWSER SETTINGS !"/><br/>
 <label for="captcha">Enter text seen above</label><br/>
 <input name="captcha" id="captcha" type="text" class="textfield" size="30" maxlength="10"/><br/>
-<?}?>
+<?php }?>
 <input type="submit" id="submit" value="Submit"/>
 </form>
 </div>
 <div class="bot"></div>
 </div>
-<?include ("footer.php");?>
+<?php include ("footer.php");?>

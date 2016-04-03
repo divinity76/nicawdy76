@@ -12,7 +12,7 @@
 <input type="submit" name="submit"/>
 </p>
 </form>
-<?
+<?php 
 if (!empty($_POST['string'])) {
 	echo "<p>\n".md5($_POST['string'])."\n</p>\n";}
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*FILE INFO:
 downloads stuff*/
 include ("config.php");
@@ -14,4 +14,4 @@ include ("header.php");
 </div>
 <div class="bot"></div>
 </div>
-<?include ("footer.php");?>
+<?php include ("footer.php");?>

@@ -44,7 +44,7 @@ if (empty($_SESSION['account'])){?>
 <input type="submit" value="LogIn"/>
 </form>
 <a href="new.php">New Account</a><br/>
-	<?} else {
+	<?php } else {
 
 $account = new Account($_SESSION['account']);
 if (!$account->load()){die('Failed loading account');}
@@ -186,8 +186,8 @@ if ($_SESSION['access'] >= $cfg['admin_access'] && !empty($_SESSION['account']))
 <option value="0">Female</option>
 <option value="1" selected="selected">Male</option>
 </select>
-</td></tr><tr class="row"><td><? if ($cfg['vocation_choose']){echo "Vocation";} ?></td><td>
-<select name="vocation" class="textfield" <? if (!$cfg['vocation_choose']){echo 'style="display: none"';} ?> >
+</td></tr><tr class="row"><td><?php  if ($cfg['vocation_choose']){echo "Vocation";} ?></td><td>
+<select name="vocation" class="textfield" <?php  if (!$cfg['vocation_choose']){echo 'style="display: none"';} ?> >
 <option value="1" selected="selected">Sorcerer</option>
 <option value="2">Druid</option>
 <option value="3">Paladin</option>
@@ -223,7 +223,7 @@ $i++;}
 </td></tr><tr class="row"><td style="text-align: center;" colspan="2">
 <input type="submit" name="submit" value="Submit"/>
 </td></tr></table>
-</form><br/><?
+</form><br/><?php 
 echo $characters;
 ?>
 <h2>Comments</h2>
@@ -233,8 +233,8 @@ echo $characters;
 </textarea><br/>
 <input type="submit" name="comment_submit" value="Submit"/>
 </form><br/>
-<?}?>
+<?php }?>
 </div>
 <div class="bot"></div>
 </div>
-<?include ("footer.php");?>
+<?php include ("footer.php");?>

@@ -1,4 +1,4 @@
-<?
+<?php 
 /*FILE INFO:
 included at every page header*/
 //Get current time
@@ -11,7 +11,7 @@ included at every page header*/
     $tstart = $mtime; 
 	?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<? echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";?>
+<?php  echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="Keywords" content="opentibia, nicaw, aac, otserv" />
@@ -29,7 +29,7 @@ included at every page header*/
 <div id="header"></div>
 <div id="panel">
 <div id="navigation">
-<?
+<?php 
 if (file_exists('navigation.xml')){
 	$XML = simplexml_load_file('navigation.xml');
 	if ($XML === false) die ('Malformed XML');
@@ -45,7 +45,7 @@ foreach ($XML->category as $cat){
 <div id="status">
 <div class="top">.:Status:.</div>
 <div class="mid">
-<?
+<?php 
 $info = getinfo($cfg['server_ip'],$cfg['server_port']);
 if (!empty($info)) {
 $infoXML = simplexml_load_string($info);

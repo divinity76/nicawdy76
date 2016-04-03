@@ -1,4 +1,4 @@
-<?
+<?php 
 /*FILE INFO:
 Statistics generator*/
 
@@ -19,7 +19,7 @@ copy('statistics.php','statistics.bak');
 
 $f_rank = fopen("statistics.php","w");
 
-fwrite($f_rank,'<?
+fwrite($f_rank,'<?php 
 ');
 
 $dir_rank = opendir($cfg['dirplayer']);

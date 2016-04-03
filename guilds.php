@@ -1,4 +1,4 @@
-<?
+<?php 
 /*FILE INFO:
 guild displaying*/
 include ("config.php");
@@ -9,7 +9,7 @@ include ("header.php");
 <div id="content">
 <div class="top">.:Guilds:.</div>
 <div class="mid">
-<?
+<?php 
 $guildsXML = simplexml_load_file($cfg['dirdata']."guilds.xml");
 foreach ($guildsXML->guild as $guild){
 	if (count($guild) > 3){
@@ -39,4 +39,4 @@ foreach ($guildsXML->guild as $guild){
 </div>
 <div class="bot"></div>
 </div>
-<?include ("footer.php");?>
+<?php include ("footer.php");?>

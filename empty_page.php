@@ -1,4 +1,4 @@
-<?
+<?php 
 include ("config.php");
 include ("functions.php");
 $ptitle="Empty - $cfg['server_name']";
@@ -12,4 +12,4 @@ NICAW ROX
 </div>
 <div class="bot"></div>
 </div>
-<?include ("footer.php");?>
+<?php include ("footer.php");?>

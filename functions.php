@@ -1,4 +1,4 @@
-<?
+<?php 
 	/*FILE INFO:
 	all the funcions we ever need*/
 	
