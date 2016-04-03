@@ -23,10 +23,10 @@ include 'header.php';
 	fclose($socket);
 	}
 include 'statistics.php';
-$total = $statistics['census']['male'] + $statistics['census']['female'];
+$total = isset($statistics)? ($statistics['census']['male'] + $statistics['census']['female']) : 0;
 if ($total == 0 || empty($total)){
 	@include 'statistics.bak';
-	$total = $statistics['census']['male'] + $statistics['census']['female'];
+	$total =  isset($statistics)? ($statistics['census']['male'] + $statistics['census']['female']) : 0;
 }
 if ($total == 0 || empty($total)){
 	$error = 'No players found. Highscores are being updated.';
