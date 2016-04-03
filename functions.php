@@ -43,7 +43,6 @@
 		
 		function isValid()
 		{
-			return ereg("^[1-9][0-9]{5,7}$",$this->number);
 		}
 		
 		function getCharCount()
