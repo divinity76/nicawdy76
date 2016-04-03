@@ -14,12 +14,12 @@ GNU General Public License for more details.
 
 http://www.gnu.org/copyleft/gpl.html
 */
-error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL);
 //---------------------------- Data Dir ----------------------------------------
 
 /*Set location of data directory
 IMPORTANT! Use / to separate folders, put / in the end     */
-$cfg['dirdata'] = 'C:/Users/Erik/Desktop/Divinity 7.6.3/data/';
+$cfg['dirdata'] = 'C:/xampp/htdocs/divinity76/data/';
 
 //----------------------------- Website Configuration --------------------------
 
@@ -305,4 +305,3 @@ if (!version_compare(phpversion(), "5.1.4", ">=") )
 //Check if extensions loaded
 if (!extension_loaded('simplexml'))
 	$error = "SimpleXML is not enabled in php.ini";
-?>
