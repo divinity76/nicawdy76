@@ -18,4 +18,4 @@ echo htmlentities(file_get_contents("home.txt"));
 </div>
 <div class="bot"></div>
 </div>
-<?phpinclude ("footer.php");?>
+<?php include ("footer.php");?>
