@@ -12,7 +12,7 @@ include ("header.php");
 <div class="mid">
 <?php 
 if (!empty($_POST['account'])){
-$_POST['email']=trim($_POST['email']);
+$_POST['email']=trim($_POST['email']??'');
 $_POST['account']=trim($_POST['account']);
 
 if ((strtolower($_POST['captcha']) == $_SESSION['RandomText']) || !$cfg['use_captha']){
