@@ -4,7 +4,6 @@ include ("config.php");
 include ("functions.php");
 /* Session security */
 if (isset($_GET['logout']) || 
-((time()-$_SESSION['last_activity'])>$cfg['session_timeout'] && $cfg['session_security'] > 0) || 
 ($_SERVER['REMOTE_ADDR'] != $_SESSION['ip'] && $cfg['session_security'] > 1)){
 	$_SESSION['account']='';
 	$_SESSION['access']='';
