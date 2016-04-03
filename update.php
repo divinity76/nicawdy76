@@ -24,7 +24,9 @@ fwrite($f_rank,'<?php
 
 $dir_rank = opendir($cfg['dirplayer']);
 while($file = readdir($dir_rank) ){
-    if ( eregi('\.xml$', $file)){
+	if(pathinfo($file,PATHINFO_EXTENSION)!=='xml'){
+		continue;
+	}
         $player = new Player (basename($file, '.xml'));
 		if ($player->load()){
 			if ($player->data['access'] < $cfg['gm_access']){
@@ -57,7 +59,6 @@ while($file = readdir($dir_rank) ){
 			}else echo $player->data['name'].' was skipped as GM<br/>';
 		}else echo $player->data['name'].' was not loaded<br/>';
 	unset($player);
-    }
 }
 // array_multisort() failed to work here :~/
 foreach (array_keys($all_stats) as $stat){
