@@ -139,8 +139,8 @@ foreach($scores as $position => $score):
 //damn, this whole script sucks
 foreach(array_keys($cfg['voc_normal']) as $id){?>
 	<tr>
-	<td><?=$cfg['voc_normal'][$id]?> </td><td><?= percent($statistics['census'][$id], $total); ?>% </td>
-	<td>(<?= $statistics['census'][$id]; ?>)
+	<td><?php /*var_dump($statistics,$id);die();*/ echo $cfg['voc_normal'][$id];?> </td><td><?= percent($statistics['census'][$id]??0, $total); ?>% </td>
+	<td>(<?= $statistics['census'][$id]??0; ?>)
 	</td>
 	</tr>
 <?php }?>
