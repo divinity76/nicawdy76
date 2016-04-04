@@ -72,14 +72,14 @@ else{$census = true;$set = 'Census';}?>
 /* page system*/
 $page_config = $cfg['number_per_page'];
 $pages = intval(( count($statistics[$set]) - 1) / $page_config);
-$site = $_GET['site'] < 0 ? 0 : ($_GET['site'] > $pages ? $pages : $_GET['site']);
+$site = $_GET['site']??0 < 0 ? 0 : ($_GET['site']??0 > $pages ? $pages : $_GET['site']??0);
 for($i = $site * $page_config; $i < ($site + 1) * $page_config; $i++)
 {
   if( !empty($statistics[$set][$i]) )
   {$scores[$i + 1] = $statistics[$set][$i];}
 }
 /* end page system*/
-$it = $_GET['site'];
+$it = $_GET['site']??0;
 ?>
 <div id="statictics"><h1>Statistics: <?=$set; ?></h1>
 <?php 
@@ -108,8 +108,9 @@ echo '<tr class="p0"><td class="p0"><b>Rank</b></td><td class="p0"><b>Name</b></
 
 if(isset($_GET[($sets??'')])):
 foreach($scores as $position => $score):
+//var_dump($score,$position);die();
 ?>
-    <tr class="<?= $score['class']; ?>">
+    <tr class="<?= $score['class']??'';/*fixme?*/ ?>">
 	<td><?= $position; ?></td>
     <td><a href="characters.php?char=<?= $score['name']; ?>"><?= $score['name']; ?></a></td>
     <td><?= $score['skill']; ?></td>
