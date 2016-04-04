@@ -192,36 +192,39 @@
 			$this->contents = $this->data->asXML();
 		}
 		
-		function isValidName()
+		function isValidName():string
 		{
 			global $cfg;
 			$name = $this->name;
 			if(stripos($name,'gm')===0){
-				echo("Fuck off.");
-				//throw new InvalidArgumentException('name cannot start with "gm"!');
+				return 'name cannot start with "gm"!';
 			}
 			if(stripos($name,'admin')!==false){
-				throw new InvalidArgumentException('name cannot include "admin"!');
+				return 'name cannot include "admin"!';
 			}
 			if(stripos($name,'god')!==false){
-				throw new InvalidArgumentException('name cannot include "god"!');
+				return 'name cannot include "god"!';
 			}
 			if(!preg_match("/^[A-Z][a-z]{1,20}([ \-][A-Za-z][a-z]{1,15}){0,3}$/",$name)){
-				throw new InvalidArgumentException('you have a nigger name. something about only having up to 19 a-Z characters, then end with max 3 numbers. wtf is these rules?');
+				return 'you have a nigger name. something about only having up to 19 a-Z characters, then end with max 3 numbers. wtf is these rules?';
 			}
 			if(strlen($name) > 25){
-				throw new InvalidArgumentException('name cannot be longer than 25 characters.');
+				return 'name cannot be longer than 25 characters.';
 			} 
 			if(strlen($name) < 4){
-				throw new InvalidArgumentException('name must be at least 4 characters long.');
+				return 'name must be at least 4 characters long.';
 			}
 			if(file_exists($cfg['dirmonster'].$name.'.xml')){
-				throw new InvalidArgumentException('name is already taken by a monster!');
+				return 'name is already taken by a monster!';
 			}
-			return true;
+			return "";
 		}
 		
-		
+		function tohtml(string $str):string
+		{
+			return htmlentities($str, ENT_QUOTES | ENT_HTML401 | ENT_SUBSTITUTE | ENT_DISALLOWED, 'UTF-8', true);
+		}
+
 		function getGuild(){
 			require ("config.php");
 			if (!file_exists($cfg['dirdata'].'guilds.xml')){return false;}

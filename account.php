@@ -61,7 +61,7 @@ if (!$cfg['vocation_choose']){
 $newplayer = new Player($_POST['name']);
 if (isset($cfg['temple'][$_POST['city']]['x']) && isset($cfg['health'][(int)$_POST['vocation']]) && ($_POST['sex'] ==="0" || $_POST['sex'] ==="1")){
 if ($account->getCharCount() < $cfg['maxchars']){
-if ($newplayer->isValidName()){
+if ($newplayer->isValidName()===""){
 if (!$newplayer->exist()){
 
 if ($cfg['CVSplayers']){
@@ -88,7 +88,7 @@ if ($cfg['CVSplayers']){
 	echo "<p><b>Character created !</b></p>";
 
 }else{$error = "This name is already taken.";}
-}else{$error = "Not a valid name";}
+}else{$error = "Not a valid name: ".tohtml(isValidName());}
 }else{echo "<b>You can't have more than $cfg[maxchars] characters on your account</b><br/>";}
 }else{$error = "Invalid parameters.";}
 
