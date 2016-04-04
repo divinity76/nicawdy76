@@ -115,7 +115,7 @@ if ($account->correctPass($_POST['old'])){
 if (preg_match('/^[a-zA-Z0-9\ \-]+$/i',$_REQUEST['delete'])){
 $deadPlayer = new Player($_REQUEST['delete']);
 //if (ereg("^[1-9][0-9]{1,20}$",$_REQUEST['account'])){
-if(preg_match('/^[1-9][0-9]{1,20}$/',$_REQUEST['delete'])){
+if(1===preg_match('/^[1-9][0-9]{1,20}$/',$_REQUEST['account'])){
 
 if ($deadPlayer->load()){
 if ($deadPlayer->data['account'] == $_SESSION['account']){
